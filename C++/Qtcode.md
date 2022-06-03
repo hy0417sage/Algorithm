@@ -1,22 +1,26 @@
-// 코드 분석하며 모르겠는 c++언어 기록하기
+# 코드 분석하며 모르겠는 c++언어 기록
+```c++
 void Activity::onCreated()
 {
     qCInfo(category, "카테고리 %s에 로그인된 정보 메세지", category . categoryName()); //정보 메세지를 카테고리에 기록한다.
     qCInfo(카테고리)
 }
+```
 
-//Qt 이벤트 핸들링 방식 : QT의 시그널과 슬롯(Signal, Slot), Connect 함수 사용법
-/*1. 시그널 : QPushButton에서 mouse click, double click, mouse over 등과 같이 정의된 것.
-2. 슬롯 : valueChanged()와 같이 값을 변경하기 위해 제공되는 Virtual 함수.*/
+## Qt 이벤트 핸들링 방식
++ QT의 시그널과 슬롯(Signal, Slot), Connect 함수 사용법
+1. 시그널 : QPushButton에서 mouse click, double click, mouse over 등과 같이 정의된 것.
+2. 슬롯 : valueChanged()와 같이 값을 변경하기 위해 제공되는 Virtual 함수.
+```c++
 connectSignal = connect(...);
 // Qt에 시그널 스롯 삭제하기
 disconnect(connectSignal);
+```
+- qml에 시그널 슬롯을 연결하지 않고 invokemethod를 호출하는 방식
 
 
-//qml에 시그널 슬롯을 연결하지 않고 invokemethod를 호출하는 방식
-//invokemethod
-
-//C++실글톤 패턴
+## C++ 싱글톤 패턴
+```c++
 bool SingletonClass::instanceFlag = false;
 SingletonClass* SingletonClass::instance = NULL;
 +*
@@ -50,3 +54,4 @@ int main() {
 
     return 0;
 }
+```
